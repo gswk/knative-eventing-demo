@@ -1,0 +1,14 @@
+apiVersion: sources.eventing.knative.dev/v1alpha1
+kind: GcpPubSubSource
+metadata:
+  name: knative-eventing-demo-gcp-source
+spec:
+  gcpCredsSecret:
+    name: gcppubsub-source-key
+    key: key.json
+  googleCloudProject: REPLEACE_ME
+  topic: knative-eventing-demo-topic
+  sink:
+    apiVersion: eventing.knative.dev/v1alpha1
+    kind: Channel
+    name: knative-eventing-demo-channel
