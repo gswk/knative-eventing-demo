@@ -1,13 +1,10 @@
 apiVersion: sources.eventing.knative.dev/v1alpha1
-kind: GcpPubSubSource
+kind: KubernetesEventSource
 metadata:
-  name: knative-eventing-demo-gcp-source
+  name: testevents
 spec:
-  gcpCredsSecret:
-    name: gcppubsub-source-key
-    key: key.json
-  googleCloudProject: REPLEACE_ME
-  topic: knative-eventing-demo-topic
+  namespace: default
+  serviceAccountName: events-sa
   sink:
     apiVersion: eventing.knative.dev/v1alpha1
     kind: Channel
