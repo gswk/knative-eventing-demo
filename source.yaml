@@ -1,7 +1,7 @@
 apiVersion: sources.eventing.knative.dev/v1alpha1
 kind: KubernetesEventSource
 metadata:
-  name: testevents
+  name: k8sevents
 spec:
   namespace: default
   serviceAccountName: events-sa
